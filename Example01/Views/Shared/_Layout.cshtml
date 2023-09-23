@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>@Page.Title</title>
+
+    <link href="//fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    @*../../*@
+    @*  tilda ~  *@
+    @*  .net de yardım eder net *@
+    <link rel="stylesheet" href="~/theme/assets/css/style-starter.css">
+</head>
+<body>
+
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light stroke">
+                @*<a class="navbar-brand" href="/1">
+                        <span> Yavuz Selim KAHRAMAN</span>
+                    </a>*@
+
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                    <span>Ayberk Yaman</span>
+                </a>
+
+                @*@Html.ActionLink("Yavuz Selim KAHRAMAN", "Index", "Home", new { }, new { @class = "navbar-brand" })*@
+
+
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa icon-expand fa-bars"></span>
+                    <span class="fa icon-close fa-times"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            @*<a class="nav-link" href="index.html">Anasayfa </a>*@
+                            @Html.ActionLink("Anasayfa", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+
+                            @*<a class="nav-link" href="portfolio.html">Portfolyo</a>*@
+                            @Html.ActionLink("Portfolyo", "Portfolio", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("İletişim", "Contact", "Home", null, new { @class = "nav-link" })
+                            @*<a class="nav-link" href="/Home/Contact">İletişim</a>*@
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <div class="popup ml-auto">
+                        <a href="#menu" class="domain" data-toggle="modal" data-target="#DomainModal">
+                            <div class="hamburger">
+                                <span class="top-bar"></span>
+                                <span class="middle-bar"></span>
+                                <span class="bottom-bar"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- toggle switch for light and dark theme -->
+                <div class="mobile-position ml-lg-2">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--/header-->
+    <div class="header-gap">
+
+    </div>
+
+
+    @RenderBody()
+
+
+    <div class="copyright py-sm-5 py-4 text-center">
+        <div class="container">
+            <p class="copy-footer-29">
+                2023 Yılı Portföyüm. Tüm hakları saklıdır | Tasarım: Ayberk Yaman</a>
+            </p>
+        </div>
+    </div>
+
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,229 @@
+Create database CvDb
+GO 
+USE [CvDb]
+GO
+/****** Object:  Table [dbo].[Abouts]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Abouts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Fullname] [nvarchar](400) NULL,
+	[JobTitle] [nvarchar](400) NULL,
+	[Description] [nvarchar](max) NULL,
+	[ImagePath] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Contacts]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contacts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Email] [nvarchar](250) NULL,
+	[Subject] [nvarchar](250) NULL,
+	[Message] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CustomerReviews]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CustomerReviews](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Fullname] [nvarchar](250) NULL,
+	[Comment] [nvarchar](max) NULL,
+	[ImagePath] [nvarchar](500) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Product]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Price] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Services]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Services](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Skills]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Skills](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](100) NULL,
+	[Rate] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Slogans]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Slogans](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Sectionname] [nvarchar](250) NULL,
+	[Title] [nvarchar](150) NULL,
+	[Description] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Abouts] ON 
+
+INSERT [dbo].[Abouts] ([Id], [Fullname], [JobTitle], [Description], [ImagePath]) VALUES (1, N'Yavuz Selim KAHRAMAN', N'Expert Software Developer', N'Çay içmeyi kahveye göre daha çok sever, sistemler inþa eder, developerlarý geliþtirir. Pozitif düþünür. Daima fokusunu korur.', N'images/about.jpg')
+SET IDENTITY_INSERT [dbo].[Abouts] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Contacts] ON 
+
+INSERT [dbo].[Contacts] ([Id], [Name], [Email], [Subject], [Message]) VALUES (1, N'test', N'test@mail.com', N'abc', N'abc')
+INSERT [dbo].[Contacts] ([Id], [Name], [Email], [Subject], [Message]) VALUES (2, N'qwe', N'werw@gmail.com', N'wqewqeqwewqe', N'qwewqe')
+INSERT [dbo].[Contacts] ([Id], [Name], [Email], [Subject], [Message]) VALUES (3, N'Yavuz Selim', N'yskahraman@gmail.com', N'Bir web sayfasý', N'Bir web sayfasý yaptýrmak istiyorum.')
+SET IDENTITY_INSERT [dbo].[Contacts] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CustomerReviews] ON 
+
+INSERT [dbo].[CustomerReviews] ([Id], [Fullname], [Comment], [ImagePath]) VALUES (1, N'ABC Yazýlým', N'Yavuz Bey bizimle ciddi anlamda ilgilendi. Aktardýklarýndan son derece memnun kaldýk. Aldýðýmýz danýþmanlýk hizmetinden memnunuz, diðerlerine tavsiye ediyoruz.', N'images/team1.jpg')
+INSERT [dbo].[CustomerReviews] ([Id], [Fullname], [Comment], [ImagePath]) VALUES (2, N'CBA Yazýlým', N'Uçtan uca, anahtar teslim stok uygulamasý yaptýrdýk, oldukça memnunuz, her türlü isteðimize sakince cevap verdi.', N'images/team2.jpg')
+SET IDENTITY_INSERT [dbo].[CustomerReviews] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Product] ON 
+
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (1, N'Iphone 6', 100)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (2, N'Iphone 7', 150)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (3, N'Iphone 8', 160)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (4, N'Iphone 10', 180)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (5, N'Iphone 11', 190)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (6, N'Iphone 12', 250)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (7, N'Iphone 13', 300)
+INSERT [dbo].[Product] ([Id], [Name], [Price]) VALUES (8, N'Iphone 14', 350)
+SET IDENTITY_INSERT [dbo].[Product] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Services] ON 
+
+INSERT [dbo].[Services] ([Id], [Title]) VALUES (1, N'Web Tasarým')
+INSERT [dbo].[Services] ([Id], [Title]) VALUES (2, N'Mobil Uygulama')
+INSERT [dbo].[Services] ([Id], [Title]) VALUES (3, N'Masaüstü Uygulamalar')
+INSERT [dbo].[Services] ([Id], [Title]) VALUES (4, N'Sosyal Medya Yönetimti')
+SET IDENTITY_INSERT [dbo].[Services] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Skills] ON 
+
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (1, N'CSharp', 70)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (2, N'React', 90)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (3, N'Fotoðrafçýlýk ', 100)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (4, N'CSS', 60)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (5, N'Web Api', 90)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (6, N'Java', 70)
+SET IDENTITY_INSERT [dbo].[Skills] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Slogans] ON 
+
+INSERT [dbo].[Slogans] ([Id], [Sectionname], [Title], [Description]) VALUES (1, N'Services', N'Hizmetler', N'<span>Markanýzý oluþturun</span> ve iþinizi büyütün')
+INSERT [dbo].[Slogans] ([Id], [Sectionname], [Title], [Description]) VALUES (2, N'Skills', N'Yetenekler', N'Çok yetenekliyimdir')
+SET IDENTITY_INSERT [dbo].[Slogans] OFF
+GO
+/****** Object:  StoredProcedure [dbo].[ap_CreateContact]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[ap_CreateContact]
+@name nvarchar(250), 
+@email nvarchar(250), 
+@subject nvarchar(250),
+@message nvarchar(MAX)
+as
+begin
+insert into Contacts values(@name,@email,@subject,@message)
+end
+GO
+/****** Object:  StoredProcedure [dbo].[ap_ListCustomerReviews]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[ap_ListCustomerReviews]
+as 
+begin
+select * from CustomerReviews  
+end
+GO
+/****** Object:  StoredProcedure [dbo].[ap_ListSkill]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[ap_ListSkill]
+as 
+begin
+select * from Skills
+end
+GO
+/****** Object:  StoredProcedure [dbo].[ap_ListSlogan]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[ap_ListSlogan]
+@sectionName nvarchar(120)
+as
+begin
+select * from Slogans where Sectionname =@sectionName
+end
+GO
+/****** Object:  StoredProcedure [dbo].[ap_ListSlogan2]    Script Date: 9/20/2023 8:09:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[ap_ListSlogan2]
+@sectionName nvarchar(120) = 'Services'
+as
+begin
+select * from Slogans where Sectionname =@sectionName
+end
+GO
